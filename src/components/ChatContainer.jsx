@@ -70,6 +70,7 @@ const ChatContainer = ({
             {/* Input */}
             <div className="relative p-4 z-10">
                 <InputBar
+                    isLoading={isLoading}
                     inputValue={inputValue}
                     setInputValue={setInputValue}
                     handleSendMessage={handleSendMessage}
