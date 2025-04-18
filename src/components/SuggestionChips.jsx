@@ -7,7 +7,7 @@ const SuggestionChips = ({ suggestions, handleSuggestionClick }) => {
             <button
                 key={index}
                 onClick={() => handleSuggestionClick(suggestion)}
-                className="px-3 py-1.5 bg-slate-800/70 hover:bg-slate-700/80 text-slate-300 text-sm rounded-full border border-slate-700/50 transition-all duration-200 hover:border-sky-700/50 hover:shadow-[0_0_10px_rgba(14,165,233,0.2)]"
+                className="px-3 py-1.5 bg-slate-700/60 hover:bg-slate-600/70 text-slate-100 text-sm rounded-full border border-slate-600/40 transition-all duration-200 hover:border-sky-400/50 hover:shadow-[0_0_10px_rgba(56,189,248,0.25)]"
             >
               {suggestion}
             </button>

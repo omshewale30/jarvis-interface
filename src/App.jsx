@@ -82,7 +82,7 @@ function App() {
     "What is Om's educational background?",
     "Tell me about Om's projects.",
     "What are Om's skills in AI/ML?",
-    "Can you guide me to the experience section?",
+    "What are Om's hobbies?",
   ]
 
   return (
