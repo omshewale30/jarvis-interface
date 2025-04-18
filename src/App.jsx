@@ -26,6 +26,7 @@ function App() {
   const [inputValue, setInputValue] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const bottomRef = useRef(null)
+  const [hasSentFirstMessage, setHasSentFirstMessage] = useState(false)
 
 
 
@@ -40,6 +41,9 @@ function App() {
     setMessages((prev) => [...prev, userMessage])
     setInputValue("")
     setIsLoading(true)
+    if(!hasSentFirstMessage) {
+        setHasSentFirstMessage(true)
+    }
 
     try {
       // Get bot response
@@ -85,6 +89,7 @@ function App() {
       <div className="relative min-h-screen w-full bg-slate-900 flex items-center justify-center overflow-hidden">
         <AnimatedBackground />
         <ChatContainer
+            hasSentFirstMessage={hasSentFirstMessage}
             messages={messages}
             inputValue={inputValue}
             setInputValue={setInputValue}

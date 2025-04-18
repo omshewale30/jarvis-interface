@@ -6,6 +6,7 @@ import InputBar from "./InputBar"
 import SuggestionChips from "./SuggestionChips"
 
 const ChatContainer = ({
+                           hasSentFirstMessage,
                            messages,
                            inputValue,
                            setInputValue,
@@ -14,6 +15,7 @@ const ChatContainer = ({
                            isLoading,
                            suggestions,
                            handleSuggestionClick,
+
                        }) => {
     const inputRef = useRef(null)
 
@@ -59,7 +61,10 @@ const ChatContainer = ({
 
             {/* Suggestions */}
             <div className="relative px-4 pt-2 z-10">
-                <SuggestionChips suggestions={suggestions} handleSuggestionClick={handleSuggestionClick} />
+                {!hasSentFirstMessage && (
+                    <SuggestionChips suggestions={suggestions} handleSuggestionClick={handleSuggestionClick} />
+                )}
+
             </div>
 
             {/* Input */}
