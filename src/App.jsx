@@ -49,8 +49,14 @@ function App() {
       // Get bot response
       const sessionId = localStorage.getItem('sessionId');
       const response = await submitChat(sessionId, inputValue)
-      // Add bot message
-      const botMessage = { id: uuidv4(), role: "model", content: response['response'] }
+      
+      // Add bot message with source details if available
+      const botMessage = { 
+        id: uuidv4(), 
+        role: "model", 
+        content: response['response'],
+        sourceDetails: response['source_details'] || null // Add source details if provided by backend
+      }
       setMessages((prev) => [...prev, botMessage])
     } catch (error) {
       console.error("Error getting response:", error)

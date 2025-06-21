@@ -25,3 +25,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+docs/SOURCE_DISPLAY_GUIDE.md
+src/utils/sourceParser.test.js
